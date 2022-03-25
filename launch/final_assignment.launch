@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <!-- Include the already created .launch files -->
+    <include file="$(find final_assignment)/launch/simulation_gmapping.launch"/>
+    <include file="$(find final_assignment)/launch/move_base.launch"/>
+    
+    <!-- Run the main_ui node -->
+    <node pkg="final_assignment" type="main_ui.py" name="main_ui" output="screen" required="true" launch-prefix="xterm -e"/>
+    
+    <!-- Run the teleop_twist_keyboard node -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" launch-prefix="xterm -e">
+    <!-- Remap the teleop_twist_keyboard node according to the defined message -->
+    <remap from="cmd_vel" to="us_cmd_vel"/>
+    </node>
+</launch>
