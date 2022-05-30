@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>Assignment 3 - Final Assignment</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This is the third and final assignment of the course Research Track 1, provided by Università Degli Studi di Genova, Robotics Engineering degree.</para>
+<para>The simulation includes a robot equipped with a laser scanner placed inside an environment in which there are obstacles.</para>
+<para>The objective of the project is to develop an architecture that can get the user request, and let the robot execute one of the following behaviors:<itemizedlist>
+<listitem><para>Autonomously reach the (x,y) coordinate inserted by the user</para>
+</listitem><listitem><para>Let the user drive the robot with the keyboard</para>
+</listitem><listitem><para>Let the user drive the robot with the keyboard by assisting him to avoid collisions</para>
+</listitem></itemizedlist>
+</para>
+<para>The simulation environment seen in Gazebo is the following: <image type="html" name="Schermata%202022-02-01%20alle%2020.54.15.png" inline="yes"></image>
+</para>
+<para>It can be seen the same simulation environment in Rviz, which is the following: <image type="html" name="Schermata%202022-02-01%20alle%2021.35.05.png" inline="yes"></image>
+</para>
+<para>This solution is developed by: Francesco Ferrazzi 5262829.</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md0">
+<title>Table of Contents</title>
+<para><itemizedlist>
+<listitem><para><ulink url="#assignemnt-3---final-assignment">Assignemnt 3 - Final Assignment</ulink><itemizedlist>
+<listitem><para><ulink url="#table-of-contents">Table of Contents</ulink></para>
+</listitem><listitem><para><ulink url="#installing-and-running">Installing and running</ulink></para>
+</listitem><listitem><para><ulink url="#project-description">Project Description</ulink></para>
+</listitem><listitem><para><ulink url="#pseudocode">Pseudocode</ulink></para>
+</listitem><listitem><para><ulink url="#possible-improvements">Possible Improvements</ulink></para>
+</listitem><listitem><para><ulink url="#sphinx-documentation">Sphinx Documentation</ulink></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Installing and running</title>
+<para>The simulator requires a <ulink url="http://wiki.ros.org/noetic/Installation">ROS Noetic</ulink> installation and the following packages if they are not already installed:</para>
+<para><itemizedlist>
+<listitem><para>install teleop twist keyboard package by typing on terminal: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-teleop-twist-keyboard</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>install the ros navigation stack by typing on terminal: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-navigation</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>install xterm package by typing on terminal: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>xterm</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>to run the program is sufficient to clone the GitHub repository using the following commands: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/CarmineD8/slam_gmapping.git</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/FraFerrazzi/final_assignment.git</highlight></codeline>
+</programlisting></para>
+<para>Remember to switch on the correct branch (noetic) for both projects using: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>git<sp/>checkout<sp/>noetic</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para>RUN THE PROGRAM typing on terminal: <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>roslaunch<sp/>final_assignment<sp/>final_assignment.launch</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Project Description</title>
+<para>The objective of the assignment is to make the robot go around the environment allowing the user to choose between the driving modality specified in the introduction of the project.</para>
+<para>In addition to let the robot drive autonomously towards the goal, drive it manually with and without driving assistance, I implemented also the following behaviors:<itemizedlist>
+<listitem><para>cancel the goal whenever the user wants</para>
+</listitem><listitem><para>reset the position of the robot in the environment</para>
+</listitem><listitem><para>shutdown the program</para>
+</listitem></itemizedlist>
+</para>
+<para>To implement the solution, the node <computeroutput><ref refid="namespacemain__ui" kindref="compound">main_ui</ref></computeroutput> was implemented. The structure of the project is the following: <image type="html" name="Schermata%202022-02-01%20alle%2022.16.38.png" inline="yes"></image>
+</para>
+<para><computeroutput><ref refid="namespacemain__ui" kindref="compound">main_ui</ref></computeroutput> node publishes on <computeroutput>gazebo</computeroutput> and <computeroutput>move_base</computeroutput> nodes. <computeroutput>gazebo</computeroutput> sends back to the <computeroutput><ref refid="namespacemain__ui" kindref="compound">main_ui</ref></computeroutput> node the information about the environment using the <computeroutput>scan</computeroutput> topic.</para>
+<para><computeroutput><ref refid="namespacemain__ui" kindref="compound">main_ui</ref></computeroutput> publishes the goal using the <computeroutput>move_base/goal</computeroutput> topic.</para>
+<para>To allow the user to control manually the robot the <computeroutput>teleop</computeroutput> node is used. The topic <computeroutput>cmd_vel</computeroutput> is remapped on the topic <computeroutput>us_cmd_vel</computeroutput> which is defined by me to let the <computeroutput><ref refid="namespacemain__ui" kindref="compound">main_ui</ref></computeroutput> node control if the velocity given by the user should be published, changed, or ignored.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Pseudocode</title>
+<para>The general behavior of the code: <programlisting><codeline><highlight class="normal">while<sp/>main_ui<sp/>node<sp/>is<sp/>running</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>rospy<sp/>not<sp/>on<sp/>shutdown</highlight></codeline>
+<codeline><highlight class="normal"><sp/>print<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>user<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>user<sp/>input<sp/>is<sp/>1:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set_goal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>goal<sp/>has<sp/>been<sp/>set:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>print_goal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>2:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual<sp/>mode<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>drive<sp/>assistance<sp/>not<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual_driving()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>3:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual<sp/>mode<sp/>active<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>drive<sp/>assistance<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual_driving()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>4:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>cancel_goal()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>9:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>reset_world()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>rospy<sp/>is<sp/>shutdown</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>else:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>user<sp/>input<sp/>not<sp/>valid</highlight></codeline>
+</programlisting></para>
+<para>The function <computeroutput>set_goal()</computeroutput> let the user insert the desired goal coordinates (x,y) and publish them in the <computeroutput>move_base/goal</computeroutput> topic.</para>
+<para>The function <computeroutput>manual_mode()</computeroutput> for both cases <computeroutput>2</computeroutput> and <computeroutput>3</computeroutput> doesn&apos;t allow the user to define a new goal and use the normal menu. The function waits for the user&apos;s input given from the keyboard. If the command given is <computeroutput>b</computeroutput>, exit from the manual mode.</para>
+<para>The difference between cases <computeroutput>2</computeroutput> and <computeroutput>3</computeroutput> is that the first one does not use the <computeroutput>assisted_driving()</computeroutput> function which uses the <computeroutput>scan</computeroutput> topic to get data from the Laser Scan and helps the user in driving the robot.</para>
+<para>The pseudocode of <computeroutput>assisted_driving()</computeroutput> function is: <programlisting><codeline><highlight class="normal">assisted_driving(msg)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>front<sp/>right<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>in<sp/>front<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>front<sp/>left<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>left<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>in<sp/>front<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>==<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>front-right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&lt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>front<sp/>left-right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>==<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&lt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>==<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>publish<sp/>the<sp/>updated<sp/>velocity</highlight></codeline>
+</programlisting></para>
+<para>where <computeroutput>msg</computeroutput> is the message coming from the laser scanner and <computeroutput>vel_msg</computeroutput> is the velocity of the robot imposed by the user using the <computeroutput>Twist</computeroutput> message.</para>
+<para>The function <computeroutput>cancel_goal()</computeroutput> checks if exists a goal. If a goal has been set, publish an empty message on the <computeroutput>move_base/cancel</computeroutput> topic. If the goal has not been set, tell the user that no goal was given.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Possible Improvements</title>
+<para>There are three main improvements that I came up with, which are:<itemizedlist>
+<listitem><para>Make the robot know a priori if a position in the environment is reachable or not</para>
+</listitem><listitem><para>Allow the user to set goals sequentially and allow the robot to reach them one after the other</para>
+</listitem><listitem><para>Develop a better code structure separating the user interface and the rest of the code using services.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Sphinx Documentation</title>
+<para>This is part of the Research Track 2 assignment.</para>
+<para>To have a look at the full documentation of the code click on the following link:</para>
+<para><ulink url="https://fraferrazzi.github.io/rt2_first_assignment/">https://fraferrazzi.github.io/rt2_first_assignment/</ulink> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

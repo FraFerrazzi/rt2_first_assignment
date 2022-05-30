@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Assignment<sp/>3<sp/>-<sp/>Final<sp/>Assignment</highlight></codeline>
+<codeline><highlight class="normal">==================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>third<sp/>and<sp/>final<sp/>assignment<sp/>of<sp/>the<sp/>course<sp/>Research<sp/>Track<sp/>1,<sp/>provided<sp/>by<sp/>Università<sp/>Degli<sp/>Studi<sp/>di<sp/>Genova,<sp/>Robotics<sp/>Engineering<sp/>degree.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>simulation<sp/>includes<sp/>a<sp/>robot<sp/>equipped<sp/>with<sp/>a<sp/>laser<sp/>scanner<sp/>placed<sp/>inside<sp/>an<sp/>environment<sp/>in<sp/>which<sp/>there<sp/>are<sp/>obstacles.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>objective<sp/>of<sp/>the<sp/>project<sp/>is<sp/>to<sp/>develop<sp/>an<sp/>architecture<sp/>that<sp/>can<sp/>get<sp/>the<sp/>user<sp/>request,<sp/>and<sp/>let<sp/>the<sp/>robot<sp/>execute<sp/>one<sp/>of<sp/>the<sp/>following<sp/>behaviors:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Autonomously<sp/>reach<sp/>the<sp/>(x,y)<sp/>coordinate<sp/>inserted<sp/>by<sp/>the<sp/>user</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Let<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>with<sp/>the<sp/>keyboard</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Let<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>with<sp/>the<sp/>keyboard<sp/>by<sp/>assisting<sp/>him<sp/>to<sp/>avoid<sp/>collisions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>simulation<sp/>environment<sp/>seen<sp/>in<sp/>Gazebo<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline><highlight class="normal">![simulation_environment](https://github.com/FraFerrazzi/final_assignment/blob/noetic/images/Schermata%202022-02-01%20alle%2020.54.15.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>can<sp/>be<sp/>seen<sp/>the<sp/>same<sp/>simulation<sp/>environment<sp/>in<sp/>Rviz,<sp/>which<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline><highlight class="normal">![rviz_environment](https://github.com/FraFerrazzi/final_assignment/blob/noetic/images/Schermata%202022-02-01%20alle%2021.35.05.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>solution<sp/>is<sp/>developed<sp/>by:<sp/>Francesco<sp/>Ferrazzi<sp/>5262829.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Table<sp/>of<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[Assignemnt<sp/>3<sp/>-<sp/>Final<sp/>Assignment](#assignemnt-3---final-assignment)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Table<sp/>of<sp/>Contents](#table-of-contents)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Installing<sp/>and<sp/>running](#installing-and-running)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Project<sp/>Description](#project-description)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Pseudocode](#pseudocode)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Possible<sp/>Improvements](#possible-improvements)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>[Sphinx<sp/>Documentation](#sphinx-documentation)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Installing<sp/>and<sp/>running</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>simulator<sp/>requires<sp/>a<sp/>[ROS<sp/>Noetic](http://wiki.ros.org/noetic/Installation)<sp/>installation<sp/>and<sp/>the<sp/>following<sp/>packages<sp/>if<sp/>they<sp/>are<sp/>not<sp/>already<sp/>installed:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>install<sp/>teleop<sp/>twist<sp/>keyboard<sp/>package<sp/>by<sp/>typing<sp/>on<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-teleop-twist-keyboard</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>install<sp/>the<sp/>ros<sp/>navigation<sp/>stack<sp/>by<sp/>typing<sp/>on<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-navigation</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>install<sp/>xterm<sp/>package<sp/>by<sp/>typing<sp/>on<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>xterm</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>to<sp/>run<sp/>the<sp/>program<sp/>is<sp/>sufficient<sp/>to<sp/>clone<sp/>the<sp/>GitHub<sp/>repository<sp/>using<sp/>the<sp/>following<sp/>commands:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/CarmineD8/slam_gmapping.git</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/FraFerrazzi/final_assignment.git</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Remember<sp/>to<sp/>switch<sp/>on<sp/>the<sp/>correct<sp/>branch<sp/>(noetic)<sp/>for<sp/>both<sp/>projects<sp/>using:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>git<sp/>checkout<sp/>noetic</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>RUN<sp/>THE<sp/>PROGRAM<sp/>typing<sp/>on<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>roslaunch<sp/>final_assignment<sp/>final_assignment.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Project<sp/>Description</highlight></codeline>
+<codeline><highlight class="normal">-------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>objective<sp/>of<sp/>the<sp/>assignment<sp/>is<sp/>to<sp/>make<sp/>the<sp/>robot<sp/>go<sp/>around<sp/>the<sp/>environment<sp/>allowing<sp/>the<sp/>user<sp/>to<sp/>choose<sp/>between<sp/>the<sp/>driving<sp/>modality<sp/>specified<sp/>in<sp/>the<sp/>introduction<sp/>of<sp/>the<sp/>project.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>addition<sp/>to<sp/>let<sp/>the<sp/>robot<sp/>drive<sp/>autonomously<sp/>towards<sp/>the<sp/>goal,<sp/>drive<sp/>it<sp/>manually<sp/>with<sp/>and<sp/>without<sp/>driving<sp/>assistance,<sp/>I<sp/>implemented<sp/>also<sp/>the<sp/>following<sp/>behaviors:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>cancel<sp/>the<sp/>goal<sp/>whenever<sp/>the<sp/>user<sp/>wants</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>reset<sp/>the<sp/>position<sp/>of<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>environment<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>shutdown<sp/>the<sp/>program<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>implement<sp/>the<sp/>solution,<sp/>the<sp/>node<sp/>`main_ui`<sp/>was<sp/>implemented.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>structure<sp/>of<sp/>the<sp/>project<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline><highlight class="normal">![code_structure](https://github.com/FraFerrazzi/final_assignment/blob/noetic/images/Schermata%202022-02-01%20alle%2022.16.38.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`main_ui`<sp/>node<sp/>publishes<sp/>on<sp/>`gazebo`<sp/>and<sp/>`move_base`<sp/>nodes.<sp/>`gazebo`<sp/>sends<sp/>back<sp/>to<sp/>the<sp/>`main_ui`<sp/>node<sp/>the<sp/>information<sp/>about<sp/>the<sp/>environment<sp/>using<sp/>the<sp/>`scan`<sp/>topic.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`main_ui`<sp/>publishes<sp/>the<sp/>goal<sp/>using<sp/>the<sp/>`move_base/goal`<sp/>topic.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>allow<sp/>the<sp/>user<sp/>to<sp/>control<sp/>manually<sp/>the<sp/>robot<sp/>the<sp/>`teleop`<sp/>node<sp/>is<sp/>used.<sp/>The<sp/>topic<sp/>`cmd_vel`<sp/>is<sp/>remapped<sp/>on<sp/>the<sp/>topic<sp/>`us_cmd_vel`<sp/>which<sp/>is<sp/>defined<sp/>by<sp/>me<sp/>to<sp/>let<sp/>the<sp/>`main_ui`<sp/>node<sp/>control<sp/>if<sp/>the<sp/>velocity<sp/>given<sp/>by<sp/>the<sp/>user<sp/>should<sp/>be<sp/>published,<sp/>changed,<sp/>or<sp/>ignored.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Pseudocode</highlight></codeline>
+<codeline><highlight class="normal">-----------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>general<sp/>behavior<sp/>of<sp/>the<sp/>code:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>main_ui<sp/>node<sp/>is<sp/>running</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>rospy<sp/>not<sp/>on<sp/>shutdown</highlight></codeline>
+<codeline><highlight class="normal"><sp/>print<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>user<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>user<sp/>input<sp/>is<sp/>1:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set_goal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>goal<sp/>has<sp/>been<sp/>set:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>print_goal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>2:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual<sp/>mode<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>drive<sp/>assistance<sp/>not<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual_driving()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>3:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual<sp/>mode<sp/>active<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>drive<sp/>assistance<sp/>active</highlight></codeline>
+<codeline><highlight class="normal"><sp/>manual_driving()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>4:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>cancel_goal()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>9:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>reset_world()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>elif<sp/>user<sp/>input<sp/>is<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>rospy<sp/>is<sp/>shutdown</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>else:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>user<sp/>input<sp/>not<sp/>valid</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>function<sp/>`set_goal()`<sp/>let<sp/>the<sp/>user<sp/>insert<sp/>the<sp/>desired<sp/>goal<sp/>coordinates<sp/>(x,y)<sp/>and<sp/>publish<sp/>them<sp/>in<sp/>the<sp/>`move_base/goal`<sp/>topic.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>function<sp/>`manual_mode()`<sp/>for<sp/>both<sp/>cases<sp/>`2`<sp/>and<sp/>`3`<sp/>doesn&apos;t<sp/>allow<sp/>the<sp/>user<sp/>to<sp/>define<sp/>a<sp/>new<sp/>goal<sp/>and<sp/>use<sp/>the<sp/>normal<sp/>menu.<sp/>The<sp/>function<sp/>waits<sp/>for<sp/>the<sp/>user&apos;s<sp/>input<sp/>given<sp/>from<sp/>the<sp/>keyboard.<sp/>If<sp/>the<sp/>command<sp/>given<sp/>is<sp/>`b`,<sp/>exit<sp/>from<sp/>the<sp/>manual<sp/>mode.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>difference<sp/>between<sp/>cases<sp/>`2`<sp/>and<sp/>`3`<sp/>is<sp/>that<sp/>the<sp/>first<sp/>one<sp/>does<sp/>not<sp/>use<sp/>the<sp/>`assisted_driving()`<sp/>function<sp/>which<sp/>uses<sp/>the<sp/>`scan`<sp/>topic<sp/>to<sp/>get<sp/>data<sp/>from<sp/>the<sp/>Laser<sp/>Scan<sp/>and<sp/>helps<sp/>the<sp/>user<sp/>in<sp/>driving<sp/>the<sp/>robot.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>pseudocode<sp/>of<sp/>`assisted_driving()`<sp/>function<sp/>is:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">assisted_driving(msg)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>front<sp/>right<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>in<sp/>front<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>front<sp/>left<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>get<sp/>minimum<sp/>distance<sp/>from<sp/>obstacles<sp/>on<sp/>the<sp/>left<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>in<sp/>front<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>==<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>front-right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&lt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>front<sp/>left-right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>&gt;<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>==<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&lt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>minimum<sp/>distance<sp/>from<sp/>obstacle<sp/>on<sp/>the<sp/>right<sp/>of<sp/>the<sp/>robot<sp/>&lt;<sp/>threshold:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>vel_msg<sp/>linear<sp/>==<sp/>0<sp/>and<sp/>vel_msg<sp/>angular<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>set<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>to<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>publish<sp/>the<sp/>updated<sp/>velocity</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">where<sp/>`msg`<sp/>is<sp/>the<sp/>message<sp/>coming<sp/>from<sp/>the<sp/>laser<sp/>scanner<sp/>and<sp/>`vel_msg`<sp/>is<sp/>the<sp/>velocity<sp/>of<sp/>the<sp/>robot<sp/>imposed<sp/>by<sp/>the<sp/>user<sp/>using<sp/>the<sp/>`Twist`<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>function<sp/>`cancel_goal()`<sp/>checks<sp/>if<sp/>exists<sp/>a<sp/>goal.<sp/>If<sp/>a<sp/>goal<sp/>has<sp/>been<sp/>set,<sp/>publish<sp/>an<sp/>empty<sp/>message<sp/>on<sp/>the<sp/>`move_base/cancel`<sp/>topic.<sp/>If<sp/>the<sp/>goal<sp/>has<sp/>not<sp/>been<sp/>set,<sp/>tell<sp/>the<sp/>user<sp/>that<sp/>no<sp/>goal<sp/>was<sp/>given.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Possible<sp/>Improvements</highlight></codeline>
+<codeline><highlight class="normal">------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>three<sp/>main<sp/>improvements<sp/>that<sp/>I<sp/>came<sp/>up<sp/>with,<sp/>which<sp/>are:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Make<sp/>the<sp/>robot<sp/>know<sp/>a<sp/>priori<sp/>if<sp/>a<sp/>position<sp/>in<sp/>the<sp/>environment<sp/>is<sp/>reachable<sp/>or<sp/>not</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Allow<sp/>the<sp/>user<sp/>to<sp/>set<sp/>goals<sp/>sequentially<sp/>and<sp/>allow<sp/>the<sp/>robot<sp/>to<sp/>reach<sp/>them<sp/>one<sp/>after<sp/>the<sp/>other</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Develop<sp/>a<sp/>better<sp/>code<sp/>structure<sp/>separating<sp/>the<sp/>user<sp/>interface<sp/>and<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>code<sp/>using<sp/>services.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Sphinx<sp/>Documentation</highlight></codeline>
+<codeline><highlight class="normal">-------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Research<sp/>Track<sp/>2<sp/>assignment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>have<sp/>a<sp/>look<sp/>at<sp/>the<sp/>full<sp/>documentation<sp/>of<sp/>the<sp/>code<sp/>click<sp/>on<sp/>the<sp/>following<sp/>link:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">https://fraferrazzi.github.io/rt2_first_assignment/</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

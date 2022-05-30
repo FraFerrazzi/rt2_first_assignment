@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+    <member refid="conf_8py_1a332f430461432dc465213f884a1e4967" kind="variable"><name>shell</name></member>
+    <member refid="conf_8py_1a45653c983098153b78e33600e39230eb" kind="variable"><name>project</name></member>
+    <member refid="conf_8py_1a33fa97cf51dcb25970fbf53f10159589" kind="variable"><name>copyright</name></member>
+    <member refid="conf_8py_1a637c239d256432248aa8d9f3ab0b8c52" kind="variable"><name>author</name></member>
+    <member refid="conf_8py_1a325dc746d8bf05c54d26351c35a21d90" kind="variable"><name>release</name></member>
+    <member refid="conf_8py_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
+    <member refid="conf_8py_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
+    <member refid="conf_8py_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="conf_8py_1a3117edf4443d9b8c70a9f0f44294ba79" kind="variable"><name>highlight_language</name></member>
+    <member refid="conf_8py_1a10af2a769eb3bd3322e874f677e435b1" kind="variable"><name>source_suffix</name></member>
+    <member refid="conf_8py_1a6fcd7e5236f355b1e1a55f9d95988810" kind="variable"><name>master_doc</name></member>
+    <member refid="conf_8py_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" kind="variable"><name>html_theme</name></member>
+    <member refid="conf_8py_1af4fb5d8851ccaade135c2668dd3ced41" kind="variable"><name>html_static_path</name></member>
+    <member refid="conf_8py_1acb47d2c0c2904fa7d36b63142533f383" kind="variable"><name>breathe_projects</name></member>
+    <member refid="conf_8py_1a6eba2d2c7ae923054b1c49e686ec89b9" kind="variable"><name>breathe_default_project</name></member>
+    <member refid="conf_8py_1a54585428ce84441199d9dfd7087e2243" kind="variable"><name>breathe_default_members</name></member>
+  </compound>
+  <compound refid="namespacemain__ui" kind="namespace"><name>main_ui</name>
+    <member refid="namespacemain__ui_1a146c1c580cdd167d1255c496f543be46" kind="variable"><name>th_reach</name></member>
+    <member refid="namespacemain__ui_1a0e6a9ea38d369ebeede101aff38bd225" kind="variable"><name>th_collision</name></member>
+    <member refid="namespacemain__ui_1a52a94ebe5662aa54332d47a8404aadb1" kind="variable"><name>max_time</name></member>
+    <member refid="namespacemain__ui_1ac50f1689685b3e817eb95f064cd37e67" kind="variable"><name>input_man</name></member>
+    <member refid="namespacemain__ui_1ad6d9f076ab8d9c6cd0a335c283cf7162" kind="variable"><name>goal_set</name></member>
+    <member refid="namespacemain__ui_1a74a54df8f081b26848e0b9049bc8cf40" kind="variable"><name>vel_msg</name></member>
+    <member refid="namespacemain__ui_1a1d82cf822a8c942ee9c0a464449247ca" kind="function"><name>print_ui</name></member>
+    <member refid="namespacemain__ui_1a12e80dbd942030c660606af6fb5e22b2" kind="function"><name>check_user_input</name></member>
+    <member refid="namespacemain__ui_1a87aa92859d2adc0f14077be28a154de7" kind="function"><name>print_goal</name></member>
+    <member refid="namespacemain__ui_1aa240721f9a74d6f4bd9e65e41ba9797e" kind="function"><name>set_goal</name></member>
+    <member refid="namespacemain__ui_1ae1c08fa9780fcea9639f5560cbb3950a" kind="function"><name>get_goal</name></member>
+    <member refid="namespacemain__ui_1adb9325e4b975e7ef0324905b6fe2d5b6" kind="function"><name>goal_reached</name></member>
+    <member refid="namespacemain__ui_1a6296df6ab3b3c0cdb9ee933411136082" kind="function"><name>cancel_goal</name></member>
+    <member refid="namespacemain__ui_1a7dc3a04d625808562cd6fcd2f0881fc6" kind="function"><name>manual_driving</name></member>
+    <member refid="namespacemain__ui_1a6e5eb46a8276fe5a8426bd91c7ff9225" kind="function"><name>assisted_driving</name></member>
+    <member refid="namespacemain__ui_1ae3b202efe8a2faaa5558566da08392f4" kind="function"><name>set_user_vel</name></member>
+    <member refid="namespacemain__ui_1a06b779059ec010ddf241d7b03b616662" kind="function"><name>driving_decision</name></member>
+    <member refid="namespacemain__ui_1ad90386f6ecd8d2a7df398e5f73a54e26" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespaceset__mode" kind="namespace"><name>set_mode</name>
+    <member refid="namespaceset__mode_1a8553db34349339975996436f25a15815" kind="variable"><name>th_reach</name></member>
+    <member refid="namespaceset__mode_1a2430ccd64ac6732e6d79a6c1c69026db" kind="variable"><name>th_collision</name></member>
+    <member refid="namespaceset__mode_1a103109ad2ae216921164a4e34e36516a" kind="variable"><name>max_time</name></member>
+    <member refid="namespaceset__mode_1afcaaf441161cd6e8092aa26447fc0d1a" kind="variable"><name>goal_set</name></member>
+    <member refid="namespaceset__mode_1a89d9d9256dc6790d011a15381d1c89a7" kind="variable"><name>reached</name></member>
+    <member refid="namespaceset__mode_1ab17814511d5f942171906444cca7fcae" kind="variable"><name>unreached</name></member>
+    <member refid="namespaceset__mode_1a4d66992153162abfb16ee78f56cce406" kind="variable"><name>goal_active</name></member>
+    <member refid="namespaceset__mode_1aacf5932a0fdb177bde6d3a8bc8dddfa7" kind="variable"><name>vel_msg</name></member>
+    <member refid="namespaceset__mode_1a8c6853a7b4e0cdf46ff9b5fd8538d889" kind="variable"><name>goal_msg</name></member>
+    <member refid="namespaceset__mode_1a223626bfdce9478ff1be50d46d953700" kind="variable"><name>modality</name></member>
+    <member refid="namespaceset__mode_1aea4d0f357243478fd7c821ecd94114b0" kind="variable"><name>input_u</name></member>
+    <member refid="namespaceset__mode_1ae12e1500ed010b7e2daa594f859523d7" kind="variable"><name>mod_change</name></member>
+    <member refid="namespaceset__mode_1a1b745bca5b0a4dd3360e048a799c8622" kind="function"><name>srv_callback_target</name></member>
+    <member refid="namespaceset__mode_1a8c2fb001867e5cfdb39cbdbad14c1620" kind="function"><name>get_goal</name></member>
+    <member refid="namespaceset__mode_1a219cb8255d2b7a6d2d3d76fe7abdc72d" kind="function"><name>srv_callback_command</name></member>
+    <member refid="namespaceset__mode_1af347703d3d7f517ba07fcb0aa4f69501" kind="function"><name>goal_reached</name></member>
+    <member refid="namespaceset__mode_1ad08b437a8b2f579d5f2682d27ebbeb64" kind="function"><name>cancel_goal</name></member>
+    <member refid="namespaceset__mode_1a45654e35b34559fecde9058add00b45d" kind="function"><name>assisted_driving</name></member>
+    <member refid="namespaceset__mode_1a40a476f021249c5b427ba21dc58976b4" kind="function"><name>set_user_vel</name></member>
+    <member refid="namespaceset__mode_1a894c2e493cc60271c5b681e8d8a0a172" kind="function"><name>driving_decision</name></member>
+    <member refid="namespaceset__mode_1a7c4d7012a9a818480652826c6eeed57f" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="index_8rst_8txt" kind="file"><name>index.rst.txt</name>
+    <member refid="index_8rst_8txt_1a3f3293e35299b6051006a69993e49718" kind="variable"><name>file</name></member>
+    <member refid="index_8rst_8txt_1abf5dd9736969c8b04f133cd51ee21d40" kind="variable"><name>May</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="main__ui_8py" kind="file"><name>main_ui.py</name>
+  </compound>
+  <compound refid="set__mode_8py" kind="file"><name>set_mode.py</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
+  </compound>
+  <compound refid="dir_45b9293d3daaa82c00b5908f14ebb805" kind="dir"><name>_build</name>
+  </compound>
+  <compound refid="dir_02bdb4005edb5055ba0ef39c3e2b4a3d" kind="dir"><name>_build/html/_sources</name>
+  </compound>
+  <compound refid="dir_63358181ce567149a79d24bdd45b3e93" kind="dir"><name>_build/html</name>
+  </compound>
+  <compound refid="dir_53e6fa9553ac22a5646d2a2b2d7b97a1" kind="dir"><name>scripts</name>
+  </compound>
+</doxygenindex>

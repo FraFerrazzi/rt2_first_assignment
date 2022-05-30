@@ -27,6 +27,7 @@ Table of Contents
  * [Project Description](#project-description)
  * [Pseudocode](#pseudocode)
  * [Possible Improvements](#possible-improvements)
+ * [Sphinx Documentation](#sphinx-documentation) 
 
 Installing and running
 ----------------------
@@ -167,3 +168,13 @@ There are three main improvements that I came up with, which are:
 * Make the robot know a priori if a position in the environment is reachable or not
 * Allow the user to set goals sequentially and allow the robot to reach them one after the other
 * Develop a better code structure separating the user interface and the rest of the code using services.
+
+
+Sphinx Documentation
+-------------------
+
+This is part of the Research Track 2 assignment.
+
+To have a look at the full documentation of the code click on the following link:
+
+https://fraferrazzi.github.io/rt2_first_assignment/

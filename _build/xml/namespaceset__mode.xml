@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceset__mode" kind="namespace" language="Python">
+    <compoundname>set_mode</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceset__mode_1a8553db34349339975996436f25a15815" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float set_mode.th_reach</definition>
+        <argsstring></argsstring>
+        <name>th_reach</name>
+        <initializer>=  0.3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="59" column="1" bodyfile="scripts/set_mode.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a2430ccd64ac6732e6d79a6c1c69026db" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float set_mode.th_collision</definition>
+        <argsstring></argsstring>
+        <name>th_collision</name>
+        <initializer>=  0.7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="62" column="1" bodyfile="scripts/set_mode.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a103109ad2ae216921164a4e34e36516a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>set_mode.max_time</definition>
+        <argsstring></argsstring>
+        <name>max_time</name>
+        <initializer>=  rospy.Duration(45)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="65" column="1" bodyfile="scripts/set_mode.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1afcaaf441161cd6e8092aa26447fc0d1a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool set_mode.goal_set</definition>
+        <argsstring></argsstring>
+        <name>goal_set</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="68" column="1" bodyfile="scripts/set_mode.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a89d9d9256dc6790d011a15381d1c89a7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int set_mode.reached</definition>
+        <argsstring></argsstring>
+        <name>reached</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="71" column="1" bodyfile="scripts/set_mode.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1ab17814511d5f942171906444cca7fcae" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int set_mode.unreached</definition>
+        <argsstring></argsstring>
+        <name>unreached</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="74" column="1" bodyfile="scripts/set_mode.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a4d66992153162abfb16ee78f56cce406" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool set_mode.goal_active</definition>
+        <argsstring></argsstring>
+        <name>goal_active</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="77" column="1" bodyfile="scripts/set_mode.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1aacf5932a0fdb177bde6d3a8bc8dddfa7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>set_mode.vel_msg</definition>
+        <argsstring></argsstring>
+        <name>vel_msg</name>
+        <initializer>=  Twist()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="80" column="1" bodyfile="scripts/set_mode.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a8c6853a7b4e0cdf46ff9b5fd8538d889" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>set_mode.goal_msg</definition>
+        <argsstring></argsstring>
+        <name>goal_msg</name>
+        <initializer>=  MoveBaseGoal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="83" column="1" bodyfile="scripts/set_mode.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1a223626bfdce9478ff1be50d46d953700" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int set_mode.modality</definition>
+        <argsstring></argsstring>
+        <name>modality</name>
+        <initializer>=  5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="86" column="1" bodyfile="scripts/set_mode.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1aea4d0f357243478fd7c821ecd94114b0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int set_mode.input_u</definition>
+        <argsstring></argsstring>
+        <name>input_u</name>
+        <initializer>=  6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="89" column="1" bodyfile="scripts/set_mode.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceset__mode_1ae12e1500ed010b7e2daa594f859523d7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool set_mode.mod_change</definition>
+        <argsstring></argsstring>
+        <name>mod_change</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="92" column="1" bodyfile="scripts/set_mode.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceset__mode_1a1b745bca5b0a4dd3360e048a799c8622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.srv_callback_target</definition>
+        <argsstring>(req)</argsstring>
+        <name>srv_callback_target</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function that is called each time a request from the &quot;/target&quot; service is received. 
+The aim is to set the target, which is a point inside the two dimensional simulation
+environment. The robot needs to reach autonomusly the given point.
+The function publishes the goal only if the first modality is active.
+
+Args:
+    req (Int): pos_x and pos_y that specify the target position
+    
+Return:
+    res (Int): goal_feedback that specify if a position is reached or not</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="96" column="1" bodyfile="scripts/set_mode.py" bodystart="96" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a8c2fb001867e5cfdb39cbdbad14c1620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.get_goal</definition>
+        <argsstring>(msg)</argsstring>
+        <name>get_goal</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function used to store the goal once it is published.
+
+Args:
+    msg (/move_base/goal): goal subscribed by move_base topic.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="136" column="1" bodyfile="scripts/set_mode.py" bodystart="136" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a219cb8255d2b7a6d2d3d76fe7abdc72d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.srv_callback_command</definition>
+        <argsstring>(req)</argsstring>
+        <name>srv_callback_command</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function called when a request is sent to the service &quot;/command&quot;.
+The aim is to select the correct driving modality according to the user decision.
+If the user decision respects one of the possible modalities and the chosen modality
+is different from the previous one, then change it and send a feedback. If not, the
+modality doesn&apos;t change and a feedback is sent.
+
+Args:
+    req (Int): command that specify the driving modality
+    
+Return:
+    res (Int): feedback that specify if the driving mode was changed or not</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="149" column="1" bodyfile="scripts/set_mode.py" bodystart="149" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1af347703d3d7f517ba07fcb0aa4f69501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.goal_reached</definition>
+        <argsstring>(msg)</argsstring>
+        <name>goal_reached</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function that tells if the goal has been reached or not. If the target is reached, a 
+message is printed.
+A goal is considered to be unreachable if, after five minutes, the robot is not able 
+to arrive at the desired position. If the goal is considered unreachable, a message is
+printed.
+
+Args:
+    msg (/move_base/feedback): robot position according to the simulation environment.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="179" column="1" bodyfile="scripts/set_mode.py" bodystart="179" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1ad08b437a8b2f579d5f2682d27ebbeb64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.cancel_goal</definition>
+        <argsstring>()</argsstring>
+        <name>cancel_goal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function used to cancel the goal once is set by the user.
+If the goal has not been set, the function does nothing.
+A goal canceled counts as unreached. When a goal is canceled, the
+status of the goal is published.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="221" column="1" bodyfile="scripts/set_mode.py" bodystart="221" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a45654e35b34559fecde9058add00b45d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.assisted_driving</definition>
+        <argsstring>(msg)</argsstring>
+        <name>assisted_driving</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function called each time arrives a message from the /scan topic.
+If the user asks for driving assistance while it&apos;s in manual mode, the function gets  
+the minimum value among a region of the laser scan. Does this for each defined region
+and checks if there is an obstacle which is too close to the robot in that reagion. 
+If this condition is verified, it does not allow the user to go towards the obstacle 
+but only to avoid it. At the end, the correct velocity is published.
+If user doesn&apos;t ask for assistance, the function does nothing.
+
+Args:
+    msg (/scan): array of 720 values defining the distances from the sensor to the
+        objects in the environment  </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="244" column="1" bodyfile="scripts/set_mode.py" bodystart="244" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a40a476f021249c5b427ba21dc58976b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.set_user_vel</definition>
+        <argsstring>(msg)</argsstring>
+        <name>set_user_vel</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function called each time the user uses the teleop keyboard to set the robot&apos;s velocity.
+If the driving mode is not in second or third modality, the function does nothing.
+If the driving assistance is not active, the velocity decided by the user is published.
+If is active, the value of the velocity is set and checked by the assisted_driving
+function before it gets published.
+
+Args:
+    msg (/us_cmd_vel): the desired robot velocity.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="317" column="1" bodyfile="scripts/set_mode.py" bodystart="317" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a894c2e493cc60271c5b681e8d8a0a172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.driving_decision</definition>
+        <argsstring>()</argsstring>
+        <name>driving_decision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function used to decide the behavior of the robot according to the user input.
+This function decides the driving modality and the actions that the robot does according
+to the input given from the keyboard by the user.</verbatim> <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="345" column="1" bodyfile="scripts/set_mode.py" bodystart="345" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceset__mode_1a7c4d7012a9a818480652826c6eeed57f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def set_mode.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This is the *main function* which inizializes the ROS node and defines the needed
+service, publishers and subscribers.
+After that it loops until the ROS node is *not* shutdown. 
+While the node is looping, it calls the functions used to:
+- print the user interface, 
+- get and check the input given from the keyboard by the user
+- decide the behavior of the robot according to the user&apos;s decision
+  
+The node relys on the &apos;rospy &lt;http://wiki.ros.org/rospy/&gt;&apos;_ module  
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/set_mode.py" line="417" column="1" bodyfile="scripts/set_mode.py" bodystart="417" bodyend="476"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: set_mode
+:platform: Unix
+:synopsis: Python module for the user Interface
+   
+.. moduleauthor:: Francesco Ferrazzi &lt;s5262829@studenti.unige.it&gt;
+
+ROS node for the the first assignment of the Research Track 2 course of the Robotics 
+Engineering Master program. The software architecture allow to control a mobile robot 
+in such a way that:
+1) Autonomusly reach a (x,y) coordinate in a 2D space inserted by the user.
+2) Let the user drive the robot with the keyboard.
+3) Let the user drive the robot assisting them to avoid collisions.
+4) Cancel the goal up to user&apos;s desire.
+5) Reset robot position.
+This works by interfacing with the jupyter notebook placed in the &quot;notebook&quot; folder.
+
+Subscribes to:
+/scan topic which contains 720 values that are distances taken by the laser scan
+/move_base/goal to get the goal position 
+/us_cmd_vel remap the desired velocity given by user
+/move_base/feedback where the simulatior publishes the robot position
+  
+Publishes to:
+/cmd_vel to define the wanted robot velocity
+/status_goal to publish the final status of the goal
+  
+Service:
+/gazebo/reset_world to reset the robot position
+/get_modality to change the robot&apos;s behavior according to the user&apos;s choice
+/get_target to set the target that the robot can reach autonomusly
+
+Action Client:
+/move_base to set and cancel the goal position</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/set_mode.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
