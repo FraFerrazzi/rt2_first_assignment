@@ -1,20 +1,37 @@
-Assignment 3 - Final Assignment
+Assignment 1 - Research Track 2
 ==================================
 
-This is the third and final assignment of the course Research Track 1, provided by Università Degli Studi di Genova, Robotics Engineering degree.
+This is the first assignment of the course Research Track 2, provided by Università Degli Studi di Genova, Robotics Engineering degree.
 
-The simulation includes a robot equipped with a laser scanner placed inside an environment in which there are obstacles. 
+The assignment is divided into three parts, which are:
+* Properly comment the third assignment of the Research Track 1 course. In addition, also the new node made for the Research Track 2 course was properly commented using sphinx.
+* Create a Jupyter notebook to interact with the simulation on the third assignment able to:
+   * Switch between the different modalities, and manage them.
+   * Plot the robot position, the laser scanner data and reached / not-reached targets.
+   
+  To achieve the wanted result, not just the notebook was implemented, but also a new node named `set_mode`. The node is very similar to the `main_ui` node already created for RT1. The only difference is that services and custom messages are defined to allow the communication between the ROS node and the Jupyter notebook.
+* Perform a statistical analysis on the first assignment, considering two different implementations and testing which one performs betterin the circuit given, when silver tokens are randomly placed in the environment. As performance evaluator the average time required to finish the circuit was considered. The two implementations are: 
+   * [My implementation](https://github.com/FraFerrazzi/Assignment-1---Research-Track.git)
+   * [Professor's implementation](https://github.com/CarmineD8/python_simulator.git)
+
+The simulation is the same as the Research Track 1 final assignment, which includes a robot equipped with a laser scanner placed inside an environment. 
 
 The objective of the project is to develop an architecture that can get the user request, and let the robot execute one of the following behaviors:
 * Autonomously reach the (x,y) coordinate inserted by the user
 * Let the user drive the robot with the keyboard
 * Let the user drive the robot with the keyboard by assisting him to avoid collisions
+* In addition, two commands to cancel the goal and to reset the simulation environment are implemented.
+* Also a way to check the status of the goal is implemented.
 
 The simulation environment seen in Gazebo is the following:
 ![simulation_environment](https://github.com/FraFerrazzi/final_assignment/blob/noetic/images/Schermata%202022-02-01%20alle%2020.54.15.png)
 
 It can be seen the same simulation environment in Rviz, which is the following:
 ![rviz_environment](https://github.com/FraFerrazzi/final_assignment/blob/noetic/images/Schermata%202022-02-01%20alle%2021.35.05.png)
+
+To see the [Sphinx Documentation](#sphinx-documentation) of the `set_mode` node and the `main_ui` go to the bottom of the page.
+
+To see the statistical analyisis go in the `statistics` directory placed in the rt2_first_assignment repository.
 
 This solution is developed by: Francesco Ferrazzi 5262829.
 
@@ -32,12 +49,10 @@ Table of Contents
 Installing and running
 ----------------------
 
+This instructions are made to explain how to run the second part of the assignment, which is the one regarding the simulation. 
+
 The simulator requires a [ROS Noetic](http://wiki.ros.org/noetic/Installation) installation and the following packages if they are not already installed:
 
-* install teleop twist keyboard package by typing on terminal:
-```bash
-$ sudo apt-get install ros-noetic-teleop-twist-keyboard
-```
 * install the ros navigation stack by typing on terminal:
 ```bash
 $ sudo apt-get install ros-noetic-navigation
@@ -51,19 +66,28 @@ $ sudo apt-get install xterm
 $ git clone https://github.com/CarmineD8/slam_gmapping.git
 ```
 ```bash
-$ git clone https://github.com/FraFerrazzi/final_assignment.git
+$ git clone https://github.com/FraFerrazzi/rt2_first_assignment.git
 ```
-Remember to switch on the correct branch (noetic) for both projects using:
+* Remember to clone the repository into a ros like workspace and use the command:
 ```bash
-$ git checkout noetic
+$ catkin_make
 ```
+ to build the project.
 * RUN THE PROGRAM typing on terminal:
 ```bash
-$ roslaunch final_assignment final_assignment.launch
+$ roslaunch rt2_first_assignment rt2_first_assignment.launch
+```
+* It is also necessary to launch the Jupyter notebook node, by going in the `Kernel` menu and selecting `Restart & Run All` after typing on terminal:
+```bash
+$ jupyter notebook --allow-root --ip 0.0.0.0
 ```
 
 Project Description
 -------------------
+
+The project description and the pseudocode sections were mae for the Research Track 1 final assignment. Since the new node `set_mode` is very similar to the old one i suggest to read the sections anyways.
+
+To see a more detailed documentation of the new node, go to the bottom of the page.
 
 The objective of the assignment is to make the robot go around the environment allowing the user to choose between the driving modality specified in the introduction of the project.
 
