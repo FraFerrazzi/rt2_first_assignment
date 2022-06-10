@@ -38,7 +38,7 @@ This solution is developed by: Francesco Ferrazzi 5262829.
 Table of Contents
 ----------------------
 
-- [Assignemnt 3 - Final Assignment](#assignemnt-3---final-assignment)
+- [Assignemnt 1 - Research Track 2](#assignemnt-1---research-track-2)
  * [Table of Contents](#table-of-contents)
  * [Installing and running](#installing-and-running)
  * [Project Description](#project-description)
